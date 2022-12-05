@@ -1,0 +1,50 @@
+#include <iostream>
+#include <math.h>
+#include <stdbool.h>
+
+// КР6  5.19 
+
+void task19() {
+    double left = -0.001, right = 1.5, eps = 0.00001, medium;
+    //Proof
+    /*double left_p = 0.001, right_p = 1.5, delta_x = 0.001;
+    bool check = false;
+    for (double i = left_p; i < right_p; i += delta_x) {
+        if ((tan(i) - i) * (tan(right_p) - right_p) < 0)
+            check = true;
+    }
+    if (check) {
+        printf("There is a root");
+    }
+    else {
+        printf("There is no a root");
+    }*/
+    
+    while (right - left > eps) {
+        medium = (right + left) / 2;
+        printf("Medium => %lf\n", medium);
+        if ((tan(left) - left) * (tan(medium) - medium) > 0) {
+            
+            left = medium;
+            printf("Left => %lf\n", left);
+        }
+        else if ((tan(right) - right) * (tan(medium) - medium) > 0) {
+            
+            right = medium;
+            printf("Right => %lf\n", right);
+        }
+    }
+
+
+    printf("Res => %.40lf",medium);
+}
+
+
+
+int main()
+{
+    //19
+    /*task19();*/
+
+}
+
