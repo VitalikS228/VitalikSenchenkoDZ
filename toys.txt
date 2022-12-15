@@ -1,0 +1,12 @@
+ball
+100
+10
+constructor
+50
+4
+toy1
+500
+7
+toy2
+70
+13
